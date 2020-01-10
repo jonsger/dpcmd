@@ -60,7 +60,7 @@ int dev_index;
 int usb_driver_init(void); 
 int get_usb_dev_cnt(void);
 int usb_driver_release(void);
-
+bool Is_NewUSBCommand(int Index);
 int OutCtrlRequest( CNTRPIPE_RQ *rq, unsigned char *buf, unsigned long buf_size ,int Index );
 
 int InCtrlRequest( CNTRPIPE_RQ *rq, unsigned char *buf, unsigned long buf_size, int Index );

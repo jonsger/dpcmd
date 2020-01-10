@@ -46,8 +46,6 @@ unsigned int g_IO4Select=1;
 bool g_bEnableVpp=false;
 int g_StartupMode=STARTUP_APPLI_SF_1;
 bool g_bStatus=true;
-extern void Sleep(unsigned int ms);
-
 
 CHIP_INFO Chip_Info;
 char *l_opt_arg;

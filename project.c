@@ -753,8 +753,6 @@ size_t Condense(uintptr_t* out,unsigned char* vc, uintptr_t* addrs, size_t addrS
     return outSize;
 }
 
-extern void SetPageSize(CHIP_INFO* mem, int USBIndex);
-
 bool BlazeUpdate(int Index)
 {
 //    struct CAddressRange addr_round;//(Chip_Info.MaxErasableSegmentInByte);

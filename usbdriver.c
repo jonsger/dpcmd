@@ -3,6 +3,7 @@
 #include <usb.h>
 #include "Macro.h"
 #include "usbdriver.h"
+#include "project.h"
 #include "FlashCommand.h"
 
 unsigned int   m_nbDeviceDetected = 0;
@@ -11,7 +12,6 @@ extern volatile bool g_bIsSF600[16];
 extern int g_CurrentSeriase;
 extern char g_board_type[8];
 extern int g_firmversion;
-extern void Sleep(unsigned int ms);
 extern CHIP_INFO Chip_Info;
 extern unsigned int g_uiDevNum;
 extern bool isSendFFsequence;
@@ -21,9 +21,6 @@ extern bool isSendFFsequence;
 #define SerialFlash_TRUE    1
 
 static usb_dev_handle *dediprog_handle[MAX_Dev_Index];
-
-extern int is_SF100nBoardVersionGreaterThan_5_5_0(int Inde);
-extern int is_SF600nBoardVersionGreaterThan_6_9_0(int Inde);
 
 bool Is_NewUSBCommand(int Index)
 {

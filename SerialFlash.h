@@ -12,27 +12,28 @@ typedef unsigned long uintptr_t;
 #endif
 //#define size_t  unsigned int
 
-    enum    //list of all chip-specific instruction, for ST serial flash
-    {
-        WREN    = 0x06,                     // Write Enable
-        WRDI    = 0x04,                     // Write Disable
-        RDIDJ   = 0x9F,        //RDIDJ      // Read Jedec ID , except 80
-        RDSR    = 0x05,                     // Read Status Register
-        WRSR    = 0x01,                     // Write Status Register
-        READ    = 0x03,                     // Byte Read
-        FREAD   = 0x0B,                     // Fast Read
-        PP      = 0x02,                     // Page Program
-        SE      = 0xD8,                     // Sector Erase
-        CHIP_ERASE      = 0xC7,         //CHIP_ERASE        // Bulk (or Chip) Erase
-        DP      = 0xB9,                     // Deep Power Down
-        RDP     = 0xAB,        //RES        // Release Deep Power Down
-        RES     = 0xAB,        //RES        // RDP and read signature
-        RDSCUR = 0x2B,
-	    GBULK = 0x98,
-	    EN4B = 0xB7,
-	    EXIT4B = 0xE9,
-    };
+enum    //list of all chip-specific instruction, for ST serial flash
+{
+    WREN    = 0x06,                     // Write Enable
+    WRDI    = 0x04,                     // Write Disable
+    RDIDJ   = 0x9F,        //RDIDJ      // Read Jedec ID , except 80
+    RDSR    = 0x05,                     // Read Status Register
+    WRSR    = 0x01,                     // Write Status Register
+    READ    = 0x03,                     // Byte Read
+    FREAD   = 0x0B,                     // Fast Read
+    PP      = 0x02,                     // Page Program
+    SE      = 0xD8,                     // Sector Erase
+    CHIP_ERASE      = 0xC7,         //CHIP_ERASE        // Bulk (or Chip) Erase
+    DP      = 0xB9,                     // Deep Power Down
+    RDP     = 0xAB,        //RES        // Release Deep Power Down
+    RES     = 0xAB,        //RES        // RDP and read signature
+    RDSCUR = 0x2B,
+    GBULK = 0x98,
+    EN4B = 0xB7,
+    EXIT4B = 0xE9,
+};
 
+void SetPageSize(CHIP_INFO* mem, int USBIndex);
 
 int SerialFlash_doWRSR(unsigned char cSR,int Index);
 
@@ -91,12 +92,12 @@ bool SST25xFxx_protectBlock(int bProtect,int Index);
 bool AT25FSxxx_protectBlock(int bProtect,int Index);
 bool CEN25QHxx_LargeEnable4ByteAddrMode(bool Enable4Byte,int Index);
 bool CN25Qxxx_LargeRDFSR(unsigned char *cSR, int Index);
-bool CN25Qxxx_LargeEnable4ByteAddrMode(bool Enable4Byte,int Index); 
+bool CN25Qxxx_LargeEnable4ByteAddrMode(bool Enable4Byte,int Index);
 bool CN25Qxxx_MutipleDIe_LargeWREAR(unsigned char cSR, int Index);
 bool CN25Qxxx_MutipleDIe_LargeRDEAR(unsigned char *cSR, int Index);
-bool CN25Qxxx_Large_doRDVCR(unsigned char *ucVCR,int Index); 
+bool CN25Qxxx_Large_doRDVCR(unsigned char *ucVCR,int Index);
 bool CN25Qxxx_Large_doWRVCR(unsigned char ucVCR,int Index);
-bool CN25Qxxx_Large_doRDENVCR(unsigned char *ucENVCR,int Index); 
+bool CN25Qxxx_Large_doRDENVCR(unsigned char *ucENVCR,int Index);
 bool CN25Qxxx_Large_doWRENVCR(unsigned char ucENVCR,int Index);
 bool CS25FLxx_LargeEnable4ByteAddrMode(bool Enable4Byte,int Index);
 size_t GetChipSize(void);

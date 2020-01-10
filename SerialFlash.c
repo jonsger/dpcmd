@@ -14,7 +14,6 @@ extern int m_boEnWriteQuadIO;
 extern CHIP_INFO Chip_Info;
 extern volatile bool g_bIsSF600[16];
 extern void Sleep(unsigned int ms);
-extern bool Is_NewUSBCommand(int Index);
 
 unsigned char mcode_WRSR=0x01;
 unsigned char mcode_WRDI=0x04;

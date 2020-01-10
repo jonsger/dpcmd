@@ -50,6 +50,7 @@ int ReadBINFile(const char *filename,unsigned char *buf, unsigned long* size);
 int WriteBINFile(const char *filename,unsigned char *buf, unsigned long size);
 bool LoadFile(char* filename);
 unsigned int CRC32(unsigned char* v, unsigned long size);
+void Sleep(unsigned int ms);
 void TurnONVpp(int Index);
 void TurnONVcc(int Index);
 void TurnOFFVpp(int Index);

@@ -2,6 +2,7 @@
 #include "FlashCommand.h"
 #include "usbdriver.h"
 #include "board.h"
+#include "project.h"
 #define SerialFlash_FALSE   -1
 #define SerialFlash_TRUE    1
 #define min(a,b) (a>b? b:a)
@@ -12,10 +13,6 @@ extern int g_firmversion;
 extern unsigned int g_IO1Select;
 extern unsigned int g_IO4Select;
 extern unsigned int g_Vcc;
-extern void Sleep(unsigned int ms);
-extern bool Is_NewUSBCommand(int Index);
-//extern int is_SF100nBoardVersionGreaterThan_5_2_0(int Index);
-//extern int is_SF600nBoardVersionGreaterThan_6_9_0(int Index);
 
 void QueryBoard(int Index)
 {
