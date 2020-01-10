@@ -22,7 +22,9 @@ int ChipInfoDbFindItem(CHIP_INFO ChipInfoDb[], int NumberOfItems, long JedecDevi
 void ChipInfoDump(long JedecDeviceIDToFind);
 
 long ChipInfoDumpChipSizeInKByte(long Jedec);
+int Dedi_Search_Chip_Db(long RDIDCommand, long UniqueID, CHIP_INFO *Chip_Info);
 int Dedi_Search_Chip_Db_ByTypeName(char* TypeName, CHIP_INFO *Chip_Info, int Index);
+void Dedi_List_AllChip();
 void getExecPath(char* Path);
 
 
